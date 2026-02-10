@@ -1,5 +1,7 @@
 import "./Header.css";
 import headerLogo from "../../assets/popcorn.png";
+import SearchBar from "../SearchBar/SearchBar.jsx";
+import Dropdown from "../DropDown/Dropdown.jsx";
 function Header() {
   return (
     <div className="header-wrapper">
@@ -14,8 +16,8 @@ function Header() {
         <a href="#">Favourites</a>
       </div>
       <div className="header-right">
-        <div className="drop-down">DropMenu</div>
-        <div className="search-bar">Search Bar</div>
+        <SearchBar />
+        <Dropdown />
       </div>
     </div>
   );
