@@ -1,0 +1,16 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.headerLogo {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.headerTitle {
+  font-size: 2.2em;
+  margin: 0;
+}
