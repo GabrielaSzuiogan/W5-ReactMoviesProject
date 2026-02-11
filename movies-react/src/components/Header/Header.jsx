@@ -2,7 +2,7 @@ import "./Header.css";
 import headerLogo from "../../assets/popcorn.png";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import Dropdown from "../DropDown/Dropdown.jsx";
-function Header({ setSearchGenre }) {
+function Header({ setSearchGenre, setGenre }) {
   return (
     <div className="header-wrapper">
       <div className="header-left">
@@ -17,7 +17,7 @@ function Header({ setSearchGenre }) {
       </div>
       <div className="header-right">
         <SearchBar setSearchGenre={setSearchGenre} />
-        <Dropdown />
+        <Dropdown setGenre={setGenre} />
       </div>
     </div>
   );

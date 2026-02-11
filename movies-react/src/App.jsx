@@ -6,10 +6,11 @@ import { useState } from "react";
 
 function App() {
   const [searchGenre, setSearchGenre] = useState("");
+  const [genre, setGenre] = useState("");
   return (
     <>
-      <Header setSearchGenre={setSearchGenre} />
-      <MovieList searchGenre={searchGenre} />
+      <Header setSearchGenre={setSearchGenre} setGenre={setGenre} />
+      <MovieList searchGenre={searchGenre} genre={genre} />
       <Footer />
     </>
   );

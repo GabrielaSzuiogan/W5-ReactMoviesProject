@@ -2,9 +2,14 @@ import MovieCard from "../MovieCard/MovieCard.jsx";
 import moviesData from "../../movies.json";
 import "./Content.css";
 
-const MovieList = ({ searchGenre }) => {
+const MovieList = ({ searchGenre, genre }) => {
   const filteredMovies = moviesData.filter((movie) => {
-    return movie.title.toLowerCase().includes(searchGenre.toLowerCase());
+    const matchesTitle = movie.title
+      .toLowerCase()
+      .includes(searchGenre.toLowerCase());
+    const matchesGenre = genre ? movie.genre === genre : true;
+    return matchesTitle && matchesGenre;
+    // return movie.title.toLowerCase().includes(searchGenre.toLowerCase());
   });
 
   return (
