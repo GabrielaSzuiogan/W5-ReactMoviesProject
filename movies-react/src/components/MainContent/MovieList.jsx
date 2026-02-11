@@ -1,30 +1,38 @@
 import MovieCard from "../MovieCard/MovieCard.jsx";
-import moviesData from "../../movies.json";
 import "./Content.css";
 
-const MovieList = ({ searchGenre, genre }) => {
-  const filteredMovies = moviesData.filter((movie) => {
+const MovieList = ({
+  searchGenre,
+  genre,
+  movies,
+  watchlist,
+  onToggleWatchlist,
+}) => {
+  const filteredMovies = movies.filter((movie) => {
     const matchesTitle = movie.title
       .toLowerCase()
       .includes(searchGenre.toLowerCase());
     const matchesGenre = genre ? movie.genre === genre : true;
     return matchesTitle && matchesGenre;
-    // return movie.title.toLowerCase().includes(searchGenre.toLowerCase());
   });
 
   return (
     <div className="movie-container">
       <div className="movie-grid">
-        {filteredMovies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            title={movie.title}
-            image={movie.image}
-            genre={movie.genre}
-            rating={movie.rating}
-          />
-        ))}
+        {filteredMovies.map((movie) => {
+          // Check if this specific movie is in the arrays
+          const isWatchlisted = watchlist.some((m) => m.id === movie.id);
+          return (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              isWatchlisted={isWatchlisted}
+              toggleWatchlist={() => onToggleWatchlist(movie)}
+            />
+          );
+        })}
       </div>
+
       {filteredMovies.length === 0 && (
         <div className="search-nf">Movie not found</div>
       )}
