@@ -2,11 +2,15 @@ import MovieCard from "../MovieCard/MovieCard.jsx";
 import moviesData from "../../movies.json";
 import "./Content.css";
 
-const MovieList = () => {
+const MovieList = ({ searchGenre }) => {
+  const filteredMovies = moviesData.filter((movie) => {
+    return movie.title.toLowerCase().includes(searchGenre.toLowerCase());
+  });
+
   return (
     <div className="movie-container">
       <div className="movie-grid">
-        {moviesData.map((movie) => (
+        {filteredMovies.map((movie) => (
           <MovieCard
             key={movie.id}
             title={movie.title}
@@ -16,6 +20,9 @@ const MovieList = () => {
           />
         ))}
       </div>
+      {filteredMovies.length === 0 && (
+        <div className="search-nf">Movie not found</div>
+      )}
     </div>
   );
 };

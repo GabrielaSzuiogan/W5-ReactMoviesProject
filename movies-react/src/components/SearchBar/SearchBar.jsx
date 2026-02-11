@@ -1,18 +1,15 @@
+import React from "react";
 import "./SearchBar.css";
 
-function SearchBar() {
+function SearchBar({ setSearchGenre }) {
   return (
     <div className="search-box">
-      <button className="btn-search">
-        <i className="fas fa-search"></i>
-      </button>
-      <textarea
+      <input
         type="text"
-        className="input-search"
-        placeholder="Type to Search..."
-      >
-        {" "}
-      </textarea>
+        placeholder="Search Movies..."
+        className="search-input"
+        onChange={(e) => setSearchGenre(e.target.value)}
+      />
     </div>
   );
 }
