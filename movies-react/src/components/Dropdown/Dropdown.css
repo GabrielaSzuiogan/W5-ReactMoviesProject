@@ -1,0 +1,10 @@
+#genre {
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  border: 1px solid #908e8e8f;
+  background-color: #333;
+  margin-right: 5px;
+}
