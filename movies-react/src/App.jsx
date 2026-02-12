@@ -1,6 +1,5 @@
 import Header from "./components/Header/Header";
 import MovieList from "./components/MainContent/MovieList";
-import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import moviesData from "./movies.json";
 
@@ -51,7 +50,6 @@ function App() {
         onToggleFavorite={handleToggleFavorite}
         currentView={currentView}
       />
-      <Footer />
     </>
   );
 }
