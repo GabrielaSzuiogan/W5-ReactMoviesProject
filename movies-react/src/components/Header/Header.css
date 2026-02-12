@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
 
-  backdrop-filter: blur(10px); /* the blur magic */
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border-c);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);

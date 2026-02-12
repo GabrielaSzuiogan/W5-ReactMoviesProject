@@ -26,7 +26,7 @@
 
 .skeleton-img {
   width: 100%;
-  height: 280px; /* Matches your real image height */
+  height: 280px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -44,11 +44,11 @@
 }
 
 .title-bar {
-  width: 250px; /* Title is usually longer */
+  width: 250px;
   background-color: var(--border-c);
 }
 
 .detail-bar {
-  width: 50%; /* Genre/Rating is shorter */
+  width: 50%;
   background-color: var(--border-c);
 }
