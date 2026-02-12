@@ -138,5 +138,12 @@
     "image": "20.jpg",
     "genre": "horror",
     "rating": "7.4"
+  },
+  {
+    "id": 21,
+    "title": "No img movie",
+    "image": "",
+    "genre": "fantasy",
+    "rating": "7.7"
   }
 ]

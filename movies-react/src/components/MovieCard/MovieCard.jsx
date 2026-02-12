@@ -13,7 +13,11 @@ function MovieCard({
   return (
     <div className="movie-card">
       <img
-        src={`src/assets/images/${movie.image}`}
+        src={
+          movie.image
+            ? `src/assets/images/${movie.image}`
+            : `src/assets/images/default.jpg`
+        }
         alt={movie.title}
         className="movie-img"
       />
