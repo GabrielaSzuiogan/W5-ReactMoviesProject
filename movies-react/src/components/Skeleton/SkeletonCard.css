@@ -1,0 +1,54 @@
+.skeleton-card {
+  background-color: var(--sec-background);
+  border: 1px solid var(--border-c);
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.skeleton-img,
+.skeleton-btn,
+.skeleton-text {
+  background-color: var(--border-c);
+  animation: pulse 1.5s infinite ease-in-out;
+  border-radius: 4px;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 280px; /* Matches your real image height */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.skeleton-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: var(--border-radius-circle);
+}
+
+.skeleton-text {
+  background-color: var(--border-c);
+  height: 15px;
+  margin-bottom: 8px;
+}
+
+.title-bar {
+  width: 250px; /* Title is usually longer */
+  background-color: var(--border-c);
+}
+
+.detail-bar {
+  width: 50%; /* Genre/Rating is shorter */
+  background-color: var(--border-c);
+}

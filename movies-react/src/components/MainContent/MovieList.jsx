@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 import "./Content.css";
+import Skeleton from "../Skeleton/SkeletonCard.jsx";
 
-const MovieList = ({
+function MovieList({
   searchGenre,
   genre,
   movies,
@@ -10,7 +12,16 @@ const MovieList = ({
   favorites,
   onToggleFavorite,
   currentView,
-}) => {
+}) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [currentView, genre, searchGenre]);
+
   const filteredMovies = movies.filter((movie) => {
     const matchesTitle = movie.title
       .toLowerCase()
@@ -29,27 +40,32 @@ const MovieList = ({
   return (
     <div className="movie-container">
       <div className="movie-grid">
-        {filteredMovies.map((movie) => {
-          const isWatchlisted = watchlist.some((m) => m.id === movie.id);
-          const isFavorited = favorites.some((m) => m.id === movie.id);
-          return (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              isWatchlisted={isWatchlisted}
-              toggleWatchlist={() => onToggleWatchlist(movie)}
-              isFavorited={isFavorited}
-              toggleFavorite={() => onToggleFavorite(movie)}
-            />
-          );
-        })}
+        {loading
+          ? // Render 6 Skeleton cards while waiting
+            Array.from({ length: 6 }).map((_, index) => (
+              <Skeleton key={index} />
+            ))
+          : filteredMovies.map((movie) => {
+              const isWatchlisted = watchlist.some((m) => m.id === movie.id);
+              const isFavorited = favorites.some((m) => m.id === movie.id);
+              return (
+                <MovieCard
+                  key={movie.id}
+                  movie={movie}
+                  isWatchlisted={isWatchlisted}
+                  toggleWatchlist={() => onToggleWatchlist(movie)}
+                  isFavorited={isFavorited}
+                  toggleFavorite={() => onToggleFavorite(movie)}
+                />
+              );
+            })}
       </div>
 
-      {filteredMovies.length === 0 && (
+      {!loading && filteredMovies.length === 0 && (
         <div className="search-nf">{emptyMessage}</div>
       )}
     </div>
   );
-};
+}
 
 export default MovieList;
