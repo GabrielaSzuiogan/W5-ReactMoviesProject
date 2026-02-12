@@ -7,19 +7,20 @@ function MovieCard({
   isFavorited,
   toggleFavorite,
 }) {
+  const handleImageError = (e) => {
+    e.target.src = "src/assets/images/default.jpg";
+  };
+
   const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
   const favoritesClass = `action-btn fav-btn ${isFavorited ? "active" : ""}`;
 
   return (
     <div className="movie-card">
       <img
-        src={
-          movie.image
-            ? `src/assets/images/${movie.image}`
-            : `src/assets/images/default.jpg`
-        }
+        src={`src/assets/images/${movie.image}`}
         alt={movie.title}
         className="movie-img"
+        onError={handleImageError}
       />
 
       <div className="movie-body">
