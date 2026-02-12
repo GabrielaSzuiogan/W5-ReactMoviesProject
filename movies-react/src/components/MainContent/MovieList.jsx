@@ -23,10 +23,10 @@ function MovieList({
   }, [currentView, genre, searchGenre]);
 
   const filteredMovies = movies.filter((movie) => {
-    const matchesTitle = movie.title
-      .toLowerCase()
+    const matchesTitle = movie?.title
+      ?.toLowerCase()
       .includes(searchGenre.toLowerCase());
-    const matchesGenre = genre ? movie.genre === genre : true;
+    const matchesGenre = genre ? movie?.genre === genre : true;
     return matchesTitle && matchesGenre;
   });
 
@@ -41,7 +41,8 @@ function MovieList({
     <div className="movie-container">
       <div className="movie-grid">
         {loading
-          ? // Render 6 Skeleton cards while waiting
+          ? // Render 6 Skeleton cards while waiting,
+            // array is empty, the item is useless to us but we need the index
             Array.from({ length: 6 }).map((_, index) => (
               <Skeleton key={index} />
             ))
