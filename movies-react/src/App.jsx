@@ -10,11 +10,21 @@ function App() {
   const [genre, setGenre] = useState("");
 
   const [watchlist, setWatchlist] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+
   const [currentView, setCurrentView] = useState("home");
 
   const handleToggleWatchlist = (movie) => {
     setWatchlist((prev) => {
-      // If found, remove it. If not found, add it.
+      if (prev.find((m) => m.id === movie.id)) {
+        return prev.filter((m) => m.id !== movie.id);
+      }
+      return [...prev, movie];
+    });
+  };
+
+  const handleToggleFavorite = (movie) => {
+    setFavorites((prev) => {
       if (prev.find((m) => m.id === movie.id)) {
         return prev.filter((m) => m.id !== movie.id);
       }
@@ -24,6 +34,7 @@ function App() {
 
   let moviesToShow = moviesData;
   if (currentView === "watchlist") moviesToShow = watchlist;
+  if (currentView === "favorites") moviesToShow = favorites;
   return (
     <>
       <Header
@@ -37,6 +48,8 @@ function App() {
         movies={moviesToShow}
         watchlist={watchlist}
         onToggleWatchlist={handleToggleWatchlist}
+        favorites={favorites}
+        onToggleFavorite={handleToggleFavorite}
       />
       <Footer />
     </>

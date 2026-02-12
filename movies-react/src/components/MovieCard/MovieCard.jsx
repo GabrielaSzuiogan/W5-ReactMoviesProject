@@ -1,7 +1,14 @@
 import "./MovieCard.css";
 
-function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
+function MovieCard({
+  movie,
+  isWatchlisted,
+  toggleWatchlist,
+  isFavorited,
+  toggleFavorite,
+}) {
   const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
+  const favoritesClass = `action-btn add-btn ${isFavorited ? "active" : ""}`;
 
   return (
     <div className="movie-card">
@@ -28,8 +35,12 @@ function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
           </div>
         </div>
 
-        <button className="action-btn add-btn" title="Add to Favourites">
-          ♥
+        <button
+          className={favoritesClass}
+          title="Add to Favourites"
+          onClick={toggleFavorite}
+        >
+          {isFavorited ? "♥︎" : "♡︎"}
         </button>
       </div>
     </div>

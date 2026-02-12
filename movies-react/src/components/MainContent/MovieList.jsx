@@ -7,6 +7,8 @@ const MovieList = ({
   movies,
   watchlist,
   onToggleWatchlist,
+  favorites,
+  onToggleFavorite,
 }) => {
   const filteredMovies = movies.filter((movie) => {
     const matchesTitle = movie.title
@@ -22,12 +24,15 @@ const MovieList = ({
         {filteredMovies.map((movie) => {
           // Check if this specific movie is in the arrays
           const isWatchlisted = watchlist.some((m) => m.id === movie.id);
+          const isFavorited = favorites.some((m) => m.id === movie.id);
           return (
             <MovieCard
               key={movie.id}
               movie={movie}
               isWatchlisted={isWatchlisted}
               toggleWatchlist={() => onToggleWatchlist(movie)}
+              isFavorited={isFavorited}
+              toggleFavorite={() => onToggleFavorite(movie)}
             />
           );
         })}

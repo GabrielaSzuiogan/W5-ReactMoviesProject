@@ -20,7 +20,7 @@ function Header({ setSearchGenre, setGenre, onNavigate }) {
           <a href="#" onClick={() => onNavigate("watchlist")}>
             Watch List
           </a>
-          <a href="#" onClick={() => onNavigate("favourites")}>
+          <a href="#" onClick={() => onNavigate("favorites")}>
             Favourites
           </a>
         </div>
