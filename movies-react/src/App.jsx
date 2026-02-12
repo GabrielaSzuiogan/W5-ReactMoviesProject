@@ -50,6 +50,7 @@ function App() {
         onToggleWatchlist={handleToggleWatchlist}
         favorites={favorites}
         onToggleFavorite={handleToggleFavorite}
+        currentView={currentView}
       />
       <Footer />
     </>

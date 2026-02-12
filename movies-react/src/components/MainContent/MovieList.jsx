@@ -9,6 +9,7 @@ const MovieList = ({
   onToggleWatchlist,
   favorites,
   onToggleFavorite,
+  currentView,
 }) => {
   const filteredMovies = movies.filter((movie) => {
     const matchesTitle = movie.title
@@ -18,11 +19,17 @@ const MovieList = ({
     return matchesTitle && matchesGenre;
   });
 
+  let emptyMessage = "Movie not found";
+
+  if (currentView === "watchlist" && movies.length === 0) {
+    emptyMessage = "Your Watch List is empty";
+  } else if (currentView === "favorites" && movies.length === 0) {
+    emptyMessage = "No Favorites selected yet ";
+  }
   return (
     <div className="movie-container">
       <div className="movie-grid">
         {filteredMovies.map((movie) => {
-          // Check if this specific movie is in the arrays
           const isWatchlisted = watchlist.some((m) => m.id === movie.id);
           const isFavorited = favorites.some((m) => m.id === movie.id);
           return (
@@ -39,7 +46,7 @@ const MovieList = ({
       </div>
 
       {filteredMovies.length === 0 && (
-        <div className="search-nf">Movie not found</div>
+        <div className="search-nf">{emptyMessage}</div>
       )}
     </div>
   );

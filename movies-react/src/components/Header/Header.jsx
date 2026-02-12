@@ -21,7 +21,7 @@ function Header({ setSearchGenre, setGenre, onNavigate }) {
             Watch List
           </a>
           <a href="#" onClick={() => onNavigate("favorites")}>
-            Favourites
+            Favorites
           </a>
         </div>
       </div>
