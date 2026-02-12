@@ -1,25 +1,18 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --main-background: #242424;
+  --sec-background: #1e1e1e;
+  --border-c: #333;
+  --border-cl: #494949;
+  --green: #4caf50;
+  --yellow: #e9d668d3;
+  --red: #ff4d4d;
+  --main-text: #e4dede;
+  --sec-text: #bab5b5;
+  --message-nf: rgb(106, 104, 104);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  --border-radius-min: 13px;
+  --border-radius-medium: 20px;
+  --border-radius-circle: 50%;
 }

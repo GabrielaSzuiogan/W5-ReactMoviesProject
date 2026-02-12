@@ -1,9 +1,11 @@
 .movie-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 30% 30% 30%;
   gap: 24px;
   padding: 40px;
-  background-color: 242424;
+  background-color: var(--main-background);
+  justify-content: center;
+  align-items: center;
 }
 
 .search-nf {
@@ -13,5 +15,5 @@
   padding: 2rem;
   display: flex;
   font-size: 2rem;
-  color: rgb(106, 104, 104);
+  color: var(--message-nf);
 }

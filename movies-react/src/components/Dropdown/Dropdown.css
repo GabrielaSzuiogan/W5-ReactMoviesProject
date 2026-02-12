@@ -1,10 +1,11 @@
 #genre {
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: var(--border-radius-medium);
   width: fit-content;
   height: fit-content;
   position: relative;
-  border: 1px solid #908e8e8f;
-  background-color: #333;
+  border: 1px solid var(--border-cl);
+  background-color: var(--main-background);
   margin-right: 5px;
+  color: var(--sec-text);
 }

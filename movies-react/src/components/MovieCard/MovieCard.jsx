@@ -8,7 +8,7 @@ function MovieCard({
   toggleFavorite,
 }) {
   const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
-  const favoritesClass = `action-btn add-btn ${isFavorited ? "active" : ""}`;
+  const favoritesClass = `action-btn fav-btn ${isFavorited ? "active" : ""}`;
 
   return (
     <div className="movie-card">

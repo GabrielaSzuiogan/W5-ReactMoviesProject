@@ -5,11 +5,11 @@
 }
 .search-input {
   padding: 8px 12px;
-  border-radius: 20px;
+  border-radius: var(--border-radius-medium);
   width: 30rem;
   margin-right: 10px;
-  border: 1px solid #908e8e8f;
+  border: 1px solid var(--border-cl);
   outline: none;
-  background-color: #333;
-  color: white;
+  background-color: var(--border-c);
+  color: var(--sec-text);
 }

@@ -1,3 +1,6 @@
 .footerInfo {
-  color: #888;
+  color: var(--message-nf);
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
