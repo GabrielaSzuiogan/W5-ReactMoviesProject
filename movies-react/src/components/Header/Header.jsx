@@ -16,7 +16,7 @@ function Header({ setSearchGenre, setGenre, onNavigate }) {
             Popcorn
           </a>
         </div>
-        <div className="nav-links" style={{ display: "flex", gap: "15px" }}>
+        <div className="nav-links">
           <a href="#" onClick={() => onNavigate("watchlist")}>
             Watch List
           </a>

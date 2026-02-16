@@ -9,8 +9,11 @@
   flex-direction: column;
   position: relative;
   border: 1px solid var(--border-c);
-}
 
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
 .movie-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -107,4 +110,26 @@
   background-color: var(--green);
   color: var(--main-text);
   border-color: var(--green);
+}
+
+@media (max-width: 1200px) {
+  .movie-body {
+    padding: 16px;
+    margin: 1rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .movie-card {
+    min-width: 100px;
+  }
+  .movie-title {
+    font-size: 1.2rem;
+  }
 }

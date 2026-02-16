@@ -41,9 +41,9 @@ function MovieList({
     <div className="movie-container">
       <div className="movie-grid">
         {loading
-          ? // Render 6 Skeleton cards while waiting,
+          ? // Render some Skeleton cards while waiting,
             // array is empty, the item is useless to us but we need the index
-            Array.from({ length: 6 }).map((_, index) => (
+            Array.from({ length: 12 }).map((_, index) => (
               <Skeleton key={index} />
             ))
           : filteredMovies.map((movie) => {

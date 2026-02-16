@@ -1,15 +1,21 @@
 .search-box {
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  max-width: 30rem;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
+
 .search-input {
   padding: 8px 12px;
   border-radius: var(--border-radius-medium);
-  width: 30rem;
-  margin-right: 10px;
+
+  width: 100%;
+  margin-right: 0;
+
   border: 1px solid var(--border-cl);
   outline: none;
   background-color: var(--border-c);
   color: var(--sec-text);
+  box-sizing: border-box;
 }

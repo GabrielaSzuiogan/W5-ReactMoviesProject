@@ -1,11 +1,10 @@
 .movie-grid {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  gap: 24px;
+  /* calculates columns based on available space */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
   padding: 40px;
   background-color: var(--main-background);
-  justify-content: center;
-  align-items: center;
 }
 
 .search-nf {
@@ -16,4 +15,11 @@
   display: flex;
   font-size: 2rem;
   color: var(--message-nf);
+}
+
+@media (max-width: 700px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 }
