@@ -82,7 +82,7 @@ Visit http://localhost:5173 (or the port shown in your terminal)
 
 ## 🔮 Future Improvements
 
-[ ] Add React Router for dedicated pages (/movie/:id).
+[x] Add React Router.
 
 [ ] Implement a "Dark/Light" mode toggle.
 
