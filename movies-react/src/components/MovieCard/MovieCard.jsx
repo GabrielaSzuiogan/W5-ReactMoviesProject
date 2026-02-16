@@ -1,4 +1,5 @@
 import "./MovieCard.css";
+import { Link } from "react-router-dom";
 
 function MovieCard({
   movie,
@@ -16,12 +17,14 @@ function MovieCard({
 
   return (
     <div className="movie-card">
-      <img
-        src={`src/assets/images/${movie.image}`}
-        alt={movie.title}
-        className="movie-img"
-        onError={handleImageError}
-      />
+      <Link to={`/movies/${movie.id}`}>
+        <img
+          src={`src/assets/images/${movie.image}`}
+          alt={movie.title}
+          className="movie-img"
+          onError={handleImageError}
+        />
+      </Link>
 
       <div className="movie-body">
         <button
@@ -33,7 +36,10 @@ function MovieCard({
         </button>
 
         <div className="movie-info">
-          <h3 className="movie-title">{movie.title}</h3>
+          <Link to={`/movies/${movie.id}`} style={{ textDecoration: "none" }}>
+            <h3 className="movie-title">{movie.title}</h3>
+          </Link>
+
           <div className="movie-details">
             <span className="movie-genre">{movie.genre}</span>
             <span className="movie-rating">★ {movie.rating}</span>

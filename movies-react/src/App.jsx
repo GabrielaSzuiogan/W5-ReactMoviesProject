@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MovieList from "./components/MainContent/MovieList";
+import MovieDetail from "./components/MovieDetail/MovieDetail";
 import { useEffect, useState } from "react";
 import moviesData from "./movies.json";
 
@@ -94,11 +95,7 @@ function App() {
 
         <Route
           path="movies/:id"
-          element={
-            <div style={{ color: "white", padding: "50px" }}>
-              Movie Details Coming Soon...
-            </div>
-          }
+          element={<MovieDetail movies={moviesData} {...commonProps} />}
         />
       </Route>
     </Routes>

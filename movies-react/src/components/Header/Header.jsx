@@ -7,22 +7,12 @@ import { Link, NavLink, useSearchParams } from "react-router-dom";
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSearchChange = (value) => {
+  const updateParams = (key, value) => {
     const newParams = new URLSearchParams(searchParams);
     if (value) {
-      newParams.set("search", value);
+      newParams.set(key, value);
     } else {
-      newParams.delete("search");
-    }
-    setSearchParams(newParams);
-  };
-
-  const handleGenreChange = (value) => {
-    const newParams = new URLSearchParams(searchParams);
-    if (value) {
-      newParams.set("genre", value);
-    } else {
-      newParams.delete("genre");
+      newParams.delete(key);
     }
     setSearchParams(newParams);
   };
@@ -44,8 +34,8 @@ function Header() {
       </div>
 
       <div className="header-right">
-        <SearchBar setSearchGenre={handleSearchChange} />
-        <Dropdown setGenre={handleGenreChange} />
+        <SearchBar setSearchGenre={(value) => updateParams("search", value)} />
+        <Dropdown setGenre={(value) => updateParams("genre", value)} />
       </div>
     </div>
   );
