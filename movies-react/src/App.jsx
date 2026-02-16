@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MovieList from "./components/MainContent/MovieList";
 import { useEffect, useState } from "react";
@@ -14,10 +15,6 @@ function App() {
     () => JSON.parse(localStorage.getItem("favoritesLS")) || [],
   );
 
-  const [currentView, setCurrentView] = useState(
-    () => JSON.parse(localStorage.getItem("viewLS")) || "home",
-  );
-
   useEffect(() => {
     localStorage.setItem("watchListLS", JSON.stringify(watchlist));
   }, [watchlist]);
@@ -25,10 +22,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("favoritesLS", JSON.stringify(favorites));
   }, [favorites]);
-
-  useEffect(() => {
-    localStorage.setItem("viewLS", JSON.stringify(currentView));
-  }, [currentView]);
 
   const handleToggleWatchlist = (movie) => {
     setWatchlist((prev) => {
@@ -48,26 +41,53 @@ function App() {
     });
   };
 
-  let moviesToShow = moviesData;
-  if (currentView === "watchlist") moviesToShow = watchlist;
-  if (currentView === "favorites") moviesToShow = favorites;
+  const commonProps = {
+    searchGenre,
+    genre,
+    watchlist,
+    favorites,
+    onToggleWatchlist: handleToggleWatchlist,
+    onToggleFavorite: handleToggleFavorite,
+  };
+
   return (
     <>
-      <Header
-        setSearchGenre={setSearchGenre}
-        setGenre={setGenre}
-        onNavigate={setCurrentView}
-      />
-      <MovieList
-        searchGenre={searchGenre}
-        genre={genre}
-        movies={moviesToShow}
-        watchlist={watchlist}
-        onToggleWatchlist={handleToggleWatchlist}
-        favorites={favorites}
-        onToggleFavorite={handleToggleFavorite}
-        currentView={currentView}
-      />
+      <Header setSearchGenre={setSearchGenre} setGenre={setGenre} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MovieList
+              {...commonProps}
+              movies={moviesData}
+              currentView="home"
+            />
+          }
+        />
+
+        <Route
+          path="/watchlist"
+          element={
+            <MovieList
+              {...commonProps}
+              movies={watchlist}
+              currentView="watchlist"
+            />
+          }
+        />
+
+        <Route
+          path="/favorites"
+          element={
+            <MovieList
+              {...commonProps}
+              movies={favorites}
+              currentView="favorites"
+            />
+          }
+        />
+      </Routes>
     </>
   );
 }

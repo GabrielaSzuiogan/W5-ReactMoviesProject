@@ -2,29 +2,25 @@ import "./Header.css";
 import headerLogo from "../../assets/popcorn.png";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import Dropdown from "../DropDown/Dropdown.jsx";
-function Header({ setSearchGenre, setGenre, onNavigate }) {
+import { Link, NavLink } from "react-router-dom"; // 1. Import Router components
+
+function Header({ setSearchGenre, setGenre }) {
   return (
     <div className="header-wrapper">
       <div className="header-left">
         <div className="logo-title">
           <img src={headerLogo} className="logo" alt="Header Logo" />
-          <a
-            href="#"
-            className="header-title"
-            onClick={() => onNavigate("home")}
-          >
+          <Link to="/" className="header-title">
             Popcorn
-          </a>
+          </Link>
         </div>
+
         <div className="nav-links">
-          <a href="#" onClick={() => onNavigate("watchlist")}>
-            Watch List
-          </a>
-          <a href="#" onClick={() => onNavigate("favorites")}>
-            Favorites
-          </a>
+          <NavLink to="/watchlist">Watch List</NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
         </div>
       </div>
+
       <div className="header-right">
         <SearchBar setSearchGenre={setSearchGenre} />
         <Dropdown setGenre={setGenre} />

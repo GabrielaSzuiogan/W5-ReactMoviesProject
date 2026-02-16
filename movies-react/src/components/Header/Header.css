@@ -76,6 +76,12 @@
   color: var(--yellow, #ffc107);
 }
 
+.nav-links a.active {
+  color: var(--yellow);
+  font-weight: bold;
+  border-bottom: 2px solid var(--yellow);
+}
+
 .header-right {
   display: flex;
   gap: 10px;
