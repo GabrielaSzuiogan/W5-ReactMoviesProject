@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 import "./Content.css";
 import Skeleton from "../Skeleton/SkeletonCard.jsx";
 
 function MovieList({
-  searchGenre,
-  genre,
   movies,
   watchlist,
   onToggleWatchlist,
@@ -14,6 +13,10 @@ function MovieList({
   currentView,
 }) {
   const [loading, setLoading] = useState(true);
+
+  const [searchParams] = useSearchParams();
+  const searchGenre = searchParams.get("search") || "";
+  const genre = searchParams.get("genre") || "";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,15 +38,14 @@ function MovieList({
   if (currentView === "watchlist" && movies.length === 0) {
     emptyMessage = "Your Watch List is empty";
   } else if (currentView === "favorites" && movies.length === 0) {
-    emptyMessage = "No Favorites selected yet ";
+    emptyMessage = "No Favorites selected yet";
   }
+
   return (
     <div className="movie-container">
       <div className="movie-grid">
         {loading
-          ? // Render some Skeleton cards while waiting,
-            // array is empty, the item is useless to us but we need the index
-            Array.from({ length: 12 }).map((_, index) => (
+          ? Array.from({ length: 12 }).map((_, index) => (
               <Skeleton key={index} />
             ))
           : filteredMovies.map((movie) => {

@@ -1,13 +1,21 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MovieList from "./components/MainContent/MovieList";
 import { useEffect, useState } from "react";
 import moviesData from "./movies.json";
 
-function App() {
-  const [searchGenre, setSearchGenre] = useState("");
-  const [genre, setGenre] = useState("");
+const Layout = () => {
+  return (
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
+};
 
+function App() {
   const [watchlist, setWatchlist] = useState(
     () => JSON.parse(localStorage.getItem("watchListLS")) || [],
   );
@@ -42,8 +50,6 @@ function App() {
   };
 
   const commonProps = {
-    searchGenre,
-    genre,
     watchlist,
     favorites,
     onToggleWatchlist: handleToggleWatchlist,
@@ -51,44 +57,51 @@ function App() {
   };
 
   return (
-    <>
-      <Header setSearchGenre={setSearchGenre} setGenre={setGenre} />
-
-      <Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
         <Route
-          path="/"
+          index
           element={
             <MovieList
-              {...commonProps}
               movies={moviesData}
               currentView="home"
+              {...commonProps}
             />
           }
         />
 
         <Route
-          path="/watchlist"
+          path="watchlist"
           element={
             <MovieList
-              {...commonProps}
               movies={watchlist}
               currentView="watchlist"
+              {...commonProps}
             />
           }
         />
 
         <Route
-          path="/favorites"
+          path="favorites"
           element={
             <MovieList
-              {...commonProps}
               movies={favorites}
               currentView="favorites"
+              {...commonProps}
             />
           }
         />
-      </Routes>
-    </>
+
+        <Route
+          path="movies/:id"
+          element={
+            <div style={{ color: "white", padding: "50px" }}>
+              Movie Details Coming Soon...
+            </div>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
 
