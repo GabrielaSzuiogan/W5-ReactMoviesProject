@@ -4,146 +4,167 @@
     "title": "Dark Storm",
     "image": "1.jpg",
     "genre": "drama",
-    "rating": "8.3"
+    "rating": "8.3",
+    "description": "As an unexpected and devastating storm approaches, several strangers find their lives intersecting in emotional and unpredictable ways. Each of them carries hidden struggles, and the growing tension outside forces them to confront long‑buried truths within. 'Dark Storm' explores the fragility of human connection, the weight of unspoken pain, and the resilience that emerges when people are pushed to their breaking point."
   },
   {
     "id": 2,
     "title": "Whisper of Fate",
     "image": "2.jpg",
     "genre": "fantasy",
-    "rating": "7.7"
+    "rating": "7.7",
+    "description": "In a world where destiny manifests as ethereal voices only a few can hear, a young wanderer becomes the unlikely bearer of an ancient prophecy. As magic stirs and kingdoms begin to crumble, she follows the soft, mysterious whispers that guide her toward her true purpose. Filled with enchanted landscapes and timeless lore, this story blends mysticism, adventure, and the unstoppable force of fate."
   },
   {
     "id": 3,
     "title": "Beyond the Edge",
     "image": "3.jpg",
     "genre": "horror",
-    "rating": "6.3"
+    "rating": "6.3",
+    "description": "A research expedition pushes too far into uncharted territory and discovers a place where the rules of reality begin to twist. As the team struggles to escape their surroundings, they face apparitions and entities born from fear itself. 'Beyond the Edge' is an unsettling psychological horror that questions what happens when the mind becomes its own worst enemy."
   },
   {
     "id": 4,
     "title": "Lost in Shadows",
     "image": "4.jpg",
     "genre": "action",
-    "rating": "9.3"
+    "rating": "9.3",
+    "description": "A skilled agent disappears during a covert mission, only to resurface at the center of a conspiracy that spans continents. Forced to operate from the shadows, he races against time to expose the truth while being hunted by those he once trusted. Fast‑paced fights, intricate chases, and deeply buried secrets drive this relentless action thriller."
   },
   {
     "id": 5,
     "title": "Echoes of Power",
     "image": "5.jpg",
     "genre": "fantasy",
-    "rating": "6.9"
+    "rating": "6.9",
+    "description": "Long‑dormant magical forces awaken after centuries of silence, drawing unlikely heroes into a conflict that threatens to reshape their world. Ancient artifacts begin to resonate with newfound energy, revealing forgotten histories and unimaginable dangers. 'Echoes of Power' blends magic, intrigue, and the responsibilities carried by those who wield extraordinary gifts."
   },
   {
     "id": 6,
     "title": "Grim Reckoning",
     "image": "6.jpg",
     "genre": "drama",
-    "rating": "8.4"
+    "rating": "8.4",
+    "description": "A once‑successful prosecutor must face the consequences of a case that changed countless lives. As past decisions resurface, he confronts the moral compromises he once justified in the name of justice. This powerful drama examines guilt, redemption, and the complex gray areas that define human choice."
   },
   {
     "id": 7,
     "title": "Fury's Flight",
     "image": "7.jpg",
     "genre": "action",
-    "rating": "9.8"
+    "rating": "9.8",
+    "description": "A fearless pilot is thrust into a high‑stakes aerial war after uncovering a plot that threatens global security. With elite forces closing in, she takes to the skies in a nonstop battle for survival, pushing both her skills and her aircraft to their limits. 'Fury’s Flight' delivers explosive action and breathtaking aerial stunts."
   },
   {
     "id": 8,
     "title": "Path of the Forgotten",
     "image": "8.jpg",
     "genre": "action",
-    "rating": "7.2"
+    "rating": "7.2",
+    "description": "In a desolate land abandoned after a great catastrophe, a lone traveler navigates crumbling ruins and ruthless factions. Along the way, he uncovers remnants of a civilization erased from memory — and secrets powerful enough to change the world once more. Gritty combat and atmospheric discovery define this journey through a forsaken realm."
   },
   {
     "id": 9,
     "title": "Nightmare's Threshold",
     "image": "9.jpg",
     "genre": "horror",
-    "rating": "1.7"
+    "rating": "1.7",
+    "description": "Reality begins to deteriorate for a troubled insomniac as terrifying visions creep into his waking life. When he discovers that others have crossed the same psychological threshold — and never returned — he must confront an ancient force feeding on human fear. This disturbing horror story blurs the boundaries between dreams and waking terror."
   },
   {
     "id": 10,
     "title": "Eternal Hunt",
     "image": "10.jpg",
     "genre": "fantasy",
-    "rating": "7.5"
+    "rating": "7.5",
+    "description": "An immortal hunter roams mystical lands in pursuit of a mythical beast whose existence has shaped legends for centuries. But with every step closer, he unravels secrets about his own nature and the hidden cost of eternity. The film blends sweeping fantasy landscapes with a deeply personal quest for meaning."
   },
   {
     "id": 11,
     "title": "Legacy of the Void",
     "image": "11.jpg",
     "genre": "action",
-    "rating": "8.5"
+    "rating": "8.5",
+    "description": "A covert strike team battles to prevent a mysterious energy source from falling into hostile hands. Their mission uncovers an ancient power capable of reshaping the world — or destroying it entirely. 'Legacy of the Void' delivers explosive action sequences wrapped in a story of loyalty, sacrifice, and monumental stakes."
   },
   {
     "id": 12,
     "title": "Shadow's Crescent",
     "image": "12.jpg",
     "genre": "horror",
-    "rating": "7.5"
+    "rating": "7.5",
+    "description": "Every few decades, a crescent moon casts an eerie glow over a secluded town, awakening dark forces buried beneath its soil. As the cycle begins again, a small group of residents uncovers the chilling truth behind the phenomenon. Atmospheric tension and creeping dread define this supernatural horror tale."
   },
   {
     "id": 13,
     "title": "Crimson Dawn",
     "image": "13.jpg",
     "genre": "fantasy",
-    "rating": "8.4"
+    "rating": "8.4",
+    "description": "A prophecy of a blood‑red sunrise sets the stage for a kingdom on the brink of collapse. Warriors, mages, and outcasts must unite against a rising darkness that threatens to consume everything. 'Crimson Dawn' blends epic world‑building with a story of unity, courage, and destiny."
   },
   {
     "id": 14,
     "title": "Silent Kingdom",
     "image": "14.jpg",
     "genre": "fantasy",
-    "rating": "6.5"
+    "rating": "6.5",
+    "description": "Deep within an ancient land lies a kingdom ruled by quietude — where voices are forbidden and sound itself is feared. When a young rebel discovers a hidden truth about the realm's silence, she sets out on a journey that challenges centuries of tradition. A thoughtful fantasy exploring freedom, expression, and rebellion."
   },
   {
     "id": 15,
     "title": "Mystic Rite",
     "image": "15.jpg",
     "genre": "fantasy",
-    "rating": "9.8"
+    "rating": "9.8",
+    "description": "A sacred ritual performed once every millennium draws powerful factions into a struggle for control over untold magical forces. As ancient spirits awaken, a chosen guardian must navigate treacherous alliances to protect the balance of the world. This visually stunning fantasy is steeped in mystery, ancient lore, and breathtaking magic."
   },
   {
     "id": 16,
     "title": "Reign of the Lost",
     "image": "16.jpg",
     "genre": "horror",
-    "rating": "9.1"
+    "rating": "9.1",
+    "description": "A remote region long believed cursed becomes the center of a shocking investigation after a series of disappearances. Those venturing inside encounter spirits of the forgotten — restless, vengeful, and eager to reclaim what was taken from them. 'Reign of the Lost' is a chilling, relentless horror story about a kingdom trapped in eternal torment."
   },
   {
     "id": 17,
     "title": "Timeless Myth",
     "image": "17.jpg",
     "genre": "drama",
-    "rating": "4.0"
+    "rating": "4.0",
+    "description": "When a historian uncovers new evidence behind a legendary tale, she becomes obsessed with separating truth from myth. Her pursuit leads her into a web of personal revelations, forcing her to reevaluate her own identity and the stories passed down through generations. A reflective drama about history, memory, and the narratives we choose to believe."
   },
   {
     "id": 18,
     "title": "Oath of the Fallen",
     "image": "18.jpg",
     "genre": "fantasy",
-    "rating": "6.3"
+    "rating": "6.3",
+    "description": "A grieving knight swears an oath to avenge his fallen comrades, only to be drawn into a mystical conflict much larger than himself. Guided by ancient spirits and dangerous allies, he uncovers truths that challenge everything he once believed. This fantasy adventure explores duty, loss, and the high price of honor."
   },
   {
     "id": 19,
     "title": "Veil of Night",
     "image": "19.jpg",
     "genre": "drama",
-    "rating": "9.5"
+    "rating": "9.5",
+    "description": "A mysterious event plunges a city into perpetual twilight, forcing its inhabitants to confront hidden fears and long‑held secrets. Through intertwined stories, the film reveals how darkness can bring both destruction and clarity. A beautifully crafted drama about resilience, truth, and the fragile ties that bind people together."
   },
   {
     "id": 20,
     "title": "Guardians of Twilight",
     "image": "20.jpg",
     "genre": "horror",
-    "rating": "7.4"
+    "rating": "7.4",
+    "description": "As an ancient curse awakens at dusk, a group of forgotten protectors rises to defend humanity from lurking supernatural horrors. Bound by a centuries‑old duty, they face monstrous creatures emerging with the fading light. This atmospheric horror film blends mythology, suspense, and the eternal struggle between darkness and dawn."
   },
   {
     "id": 21,
     "title": "No img movie",
     "image": "",
     "genre": "fantasy",
-    "rating": "7.7"
+    "rating": "7.7",
+    "description": "A mysterious tale unfolds around a legendary artifact known only through spoken stories and forgotten illustrations. With no clear records or images, the adventure relies on imagination, symbolism, and ancient lore. The film invites audiences to visualize the unseen as heroes embark on a magical quest shaped entirely by the unknown."
   }
 ]

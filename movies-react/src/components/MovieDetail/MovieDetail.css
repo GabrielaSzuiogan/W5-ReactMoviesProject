@@ -1,0 +1,32 @@
+.movie-detail-container {
+  color: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+
+.back-button {
+  padding: 20px 20px;
+  margin: 1rem;
+  color: var(--sec-text);
+  background-color: var(--border-cl);
+  border-radius: var(--border-radius-min);
+  cursor: pointer;
+  width: 5rem;
+  height: 2rem;
+  align-self: first baseline;
+}
+
+.movie-detail-img {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.movie-description {
+  margin-top: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+}

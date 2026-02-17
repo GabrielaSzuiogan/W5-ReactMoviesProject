@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "../MainContent/Content.css";
+import "./MovieDetail.css";
 
 const MovieDetail = ({ movies }) => {
   const { id } = useParams();
@@ -12,31 +13,16 @@ const MovieDetail = ({ movies }) => {
   }
 
   return (
-    <div
-      className="movie-detail-container"
-      style={{
-        color: "white",
-        padding: "40px",
-        display: "flex",
-        alignContent: "center",
-        justifyContent: "center",
-        gap: "5%",
-      }}
-    >
+    <div className="movie-detail-container">
       <button
+        className="back-button"
         onClick={() => navigate(-1)}
-        style={{
-          padding: "10px 20px",
-          marginBottom: "20px",
-          cursor: "pointer",
-          width: "5rem",
-          height: "5rem",
-        }}
+        title="Go Back"
       >
-        ← Back
+        ← {}
       </button>
 
-      <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
+      <div className="movie-detail-img ">
         <img
           src={`../src/assets/images/${movie.image}`}
           alt={movie.title}
@@ -52,15 +38,7 @@ const MovieDetail = ({ movies }) => {
           <p style={{ fontSize: "1.5rem", color: "#ffc107" }}>
             ★ {movie.rating}
           </p>
-          <p
-            style={{ marginTop: "20px", maxWidth: "600px", lineHeight: "1.6" }}
-          >
-            {/* Placeholder description since JSON doesn't have it */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <p className="movie-description">{movie.description}</p>
         </div>
       </div>
     </div>
