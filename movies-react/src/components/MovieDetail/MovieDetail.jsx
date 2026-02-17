@@ -8,6 +8,10 @@ const MovieDetail = ({ movies }) => {
 
   const movie = movies.find((m) => m.id.toString() === id);
 
+  const handleImageError = (e) => {
+    e.target.src = "../src/assets/images/default.jpg";
+  };
+
   if (!movie) {
     return <div className="search-nf">Movie not found!</div>;
   }
@@ -19,7 +23,7 @@ const MovieDetail = ({ movies }) => {
         onClick={() => navigate(-1)}
         title="Go Back"
       >
-        ← {}
+        ←
       </button>
 
       <div className="movie-detail-img ">
@@ -27,6 +31,7 @@ const MovieDetail = ({ movies }) => {
           src={`../src/assets/images/${movie.image}`}
           alt={movie.title}
           style={{ width: "300px", borderRadius: "16px" }}
+          onError={handleImageError}
         />
         <div className="movie-info">
           <h1 style={{ fontSize: "3rem", margin: "0 0 20px" }}>

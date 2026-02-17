@@ -4,6 +4,7 @@ import MovieList from "./components/MainContent/MovieList";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
 import { useEffect, useState } from "react";
 import moviesData from "./movies.json";
+import errImg from "./assets/404err.svg";
 
 const Layout = () => {
   return (
@@ -96,6 +97,15 @@ function App() {
         <Route
           path="movies/:id"
           element={<MovieDetail movies={moviesData} {...commonProps} />}
+        />
+
+        <Route
+          path="*"
+          element={
+            <div className="err-img-wrpp">
+              <img src={errImg} alt="404 ERROR" />
+            </div>
+          }
         />
       </Route>
     </Routes>

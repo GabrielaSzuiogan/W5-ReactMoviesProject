@@ -16,3 +16,14 @@
   --border-radius-medium: 20px;
   --border-radius-circle: 50%;
 }
+
+.err-img-wrpp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.err-img-wrpp img {
+  height: 30rem;
+  width: 30rem;
+}
