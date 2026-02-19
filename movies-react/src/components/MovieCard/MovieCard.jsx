@@ -1,19 +1,20 @@
+import { useMoviesCtx } from "../../context/MovieContext";
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
 
-function MovieCard({
-  movie,
-  isWatchlisted,
-  toggleWatchlist,
-  isFavorited,
-  toggleFavorite,
-}) {
-  const handleImageError = (e) => {
-    e.target.src = "src/assets/images/default.jpg";
-  };
+function MovieCard({ movie }) {
+  const { watchlist, favorites, toggleWatchlist, toggleFavorite } =
+    useMoviesCtx();
+
+  const isWatchlisted = watchlist.some((m) => m.id === movie.id);
+  const isFavorited = favorites.some((m) => m.id === movie.id);
 
   const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
   const favoritesClass = `action-btn fav-btn ${isFavorited ? "active" : ""}`;
+
+  const handleImageError = (e) => {
+    e.target.src = "src/assets/images/default.jpg";
+  };
 
   return (
     <div className="movie-card">
@@ -30,7 +31,7 @@ function MovieCard({
         <button
           className={watchlistClass}
           title="Add to Watchlist"
-          onClick={toggleWatchlist}
+          onClick={() => toggleWatchlist(movie)}
         >
           {isWatchlisted ? "✔" : "+"}
         </button>
@@ -49,7 +50,7 @@ function MovieCard({
         <button
           className={favoritesClass}
           title="Add to Favourites"
-          onClick={toggleFavorite}
+          onClick={() => toggleFavorite(movie)}
         >
           {isFavorited ? "♥︎" : "♡︎"}
         </button>

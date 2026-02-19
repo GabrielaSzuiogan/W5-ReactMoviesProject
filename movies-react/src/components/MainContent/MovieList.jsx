@@ -4,14 +4,7 @@ import MovieCard from "../MovieCard/MovieCard.jsx";
 import "./Content.css";
 import Skeleton from "../Skeleton/SkeletonCard.jsx";
 
-function MovieList({
-  movies,
-  watchlist,
-  onToggleWatchlist,
-  favorites,
-  onToggleFavorite,
-  currentView,
-}) {
+function MovieList({ movies, currentView }) {
   const [loading, setLoading] = useState(true);
 
   const [searchParams] = useSearchParams();
@@ -49,18 +42,7 @@ function MovieList({
               <Skeleton key={index} />
             ))
           : filteredMovies.map((movie) => {
-              const isWatchlisted = watchlist.some((m) => m.id === movie.id);
-              const isFavorited = favorites.some((m) => m.id === movie.id);
-              return (
-                <MovieCard
-                  key={movie.id}
-                  movie={movie}
-                  isWatchlisted={isWatchlisted}
-                  toggleWatchlist={() => onToggleWatchlist(movie)}
-                  isFavorited={isFavorited}
-                  toggleFavorite={() => onToggleFavorite(movie)}
-                />
-              );
+              return <MovieCard key={movie.id} movie={movie} />;
             })}
       </div>
 

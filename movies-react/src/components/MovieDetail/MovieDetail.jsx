@@ -1,12 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "../MainContent/Content.css";
 import "./MovieDetail.css";
+import { useMoviesCtx } from "../../context/MovieContext";
 
-const MovieDetail = ({ movies }) => {
+const MovieDetail = () => {
+  const { moviesData } = useMoviesCtx();
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const movie = movies.find((m) => m.id.toString() === id);
+  const movie = moviesData.find((m) => m.id.toString() === id);
 
   const handleImageError = (e) => {
     e.target.src = "../src/assets/images/default.jpg";
