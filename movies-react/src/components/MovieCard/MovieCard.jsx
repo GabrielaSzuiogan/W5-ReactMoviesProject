@@ -1,20 +1,25 @@
-import { useMoviesCtx } from "../../context/MovieContext";
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  toggleWatchlist,
+  toggleFavorite,
+} from "../../features/movies/moviesSlice";
 
 function MovieCard({ movie }) {
-  const { watchlist, favorites, toggleWatchlist, toggleFavorite } =
-    useMoviesCtx();
+  const dispatch = useDispatch();
 
+  //read state to determine if this specific movie is active
+  const { watchlist, favorites } = useSelector((state) => state.movies);
   const isWatchlisted = watchlist.some((m) => m.id === movie.id);
   const isFavorited = favorites.some((m) => m.id === movie.id);
-
-  const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
-  const favoritesClass = `action-btn fav-btn ${isFavorited ? "active" : ""}`;
 
   const handleImageError = (e) => {
     e.target.src = "src/assets/images/default.jpg";
   };
+
+  const watchlistClass = `action-btn add-btn ${isWatchlisted ? "active" : ""}`;
+  const favoritesClass = `action-btn fav-btn ${isFavorited ? "active" : ""}`;
 
   return (
     <div className="movie-card">
@@ -30,8 +35,7 @@ function MovieCard({ movie }) {
       <div className="movie-body">
         <button
           className={watchlistClass}
-          title="Add to Watchlist"
-          onClick={() => toggleWatchlist(movie)}
+          onClick={() => dispatch(toggleWatchlist(movie))}
         >
           {isWatchlisted ? "✔" : "+"}
         </button>
@@ -40,7 +44,6 @@ function MovieCard({ movie }) {
           <Link to={`/movies/${movie.id}`} style={{ textDecoration: "none" }}>
             <h3 className="movie-title">{movie.title}</h3>
           </Link>
-
           <div className="movie-details">
             <span className="movie-genre">{movie.genre}</span>
             <span className="movie-rating">★ {movie.rating}</span>
@@ -49,8 +52,7 @@ function MovieCard({ movie }) {
 
         <button
           className={favoritesClass}
-          title="Add to Favourites"
-          onClick={() => toggleFavorite(movie)}
+          onClick={() => dispatch(toggleFavorite(movie))}
         >
           {isFavorited ? "♥︎" : "♡︎"}
         </button>

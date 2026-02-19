@@ -1,31 +1,30 @@
 import { Routes, Route, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Header from "./components/Header/Header";
 import MovieList from "./components/MainContent/MovieList";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
-import { useMoviesCtx } from "./context/MovieContext"; // Import custom hook
 
-const Layout = () => {
-  return (
-    <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-    </>
-  );
-};
+const Layout = () => (
+  <>
+    <Header />
+    <main>
+      <Outlet />
+    </main>
+  </>
+);
 
 function App() {
-  // only the arrays we need for routing from Context
-  const { moviesData, watchlist, favorites } = useMoviesCtx();
+  //arrays from the Redux store
+  const { allMovies, watchlist, favorites } = useSelector(
+    (state) => state.movies,
+  );
 
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* pass 'movies' to the list now, no more common props! */}
         <Route
           index
-          element={<MovieList movies={moviesData} currentView="home" />}
+          element={<MovieList movies={allMovies} currentView="home" />}
         />
         <Route
           path="watchlist"

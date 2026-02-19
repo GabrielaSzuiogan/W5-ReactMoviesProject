@@ -34,8 +34,14 @@ function Header() {
       </div>
 
       <div className="header-right">
-        <SearchBar setSearchGenre={(value) => updateParams("search", value)} />
-        <Dropdown setGenre={(value) => updateParams("genre", value)} />
+        <SearchBar
+          setSearchGenre={(value) => updateParams("search", value)}
+          initialValue={searchParams.get("search") || ""}
+        />
+        <Dropdown
+          setGenre={(value) => updateParams("genre", value)}
+          initialValue={searchParams.get("genre") || ""}
+        />
       </div>
     </div>
   );

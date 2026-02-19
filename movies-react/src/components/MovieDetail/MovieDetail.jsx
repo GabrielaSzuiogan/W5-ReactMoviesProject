@@ -1,10 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"; // 1. Import Redux Hook
 import "../MainContent/Content.css";
 import "./MovieDetail.css";
-import { useMoviesCtx } from "../../context/MovieContext";
 
 const MovieDetail = () => {
-  const { moviesData } = useMoviesCtx();
+  // 2. Read from Redux Store instead of Context
+  const moviesData = useSelector((state) => state.movies.allMovies);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
